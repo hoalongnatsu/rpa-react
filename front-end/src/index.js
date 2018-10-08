@@ -1,4 +1,5 @@
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import './style/style.scss';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -8,13 +9,13 @@ import { createStore } from 'redux';
 
 import App from './components/App';
 import rootReducer from './reducer';
-import { receive_image } from './action/images-action';
+import { receiveImage } from './action/images-action';
 
 const store = createStore(rootReducer);
 // store.subscribe(() => console.log(store.getState()));
 
 // Get data from server
-fetch("http://localhost:3000/api/images").then(res =>  res.json()).then((images) => store.dispatch(receive_image(images)))
+fetch("http://localhost:3001/api/images").then(res => res.json()).then((images) => store.dispatch(receiveImage(images)))
 
 ReactDOM.render(
    <Provider store={store}>

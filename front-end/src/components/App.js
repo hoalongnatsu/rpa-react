@@ -11,7 +11,7 @@ import ImageShow from './ImageShow';
 export class App extends Component {
   render() {
     return (
-      <div>
+      <div className="mb-4">
          <Menu></Menu>
          <Container>
             <Header></Header>
